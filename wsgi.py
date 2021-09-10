@@ -1,5 +1,7 @@
 from flask import Flask
 from flask import Response
+from flask_cors import CORS
+
 application = Flask(__name__)
 
 @application.route("/")
@@ -11,4 +13,5 @@ def text_plain():
     return Response("Hello World!", mimetype='text/plain')
 
 if __name__ == "__main__":
+    CORS(application)
     application.run()
